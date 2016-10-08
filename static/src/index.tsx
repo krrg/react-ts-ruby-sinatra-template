@@ -1,10 +1,12 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import Reactionary = require("react");
+import {Router, Route, hashHistory} from 'react-router'
 
 import { Hello } from "./components/Hello";
 
 ReactDOM.render(
-    <Hello compiler="TypeScript" framework="React" />,
-    document.getElementById("example")
+    (<Router history={hashHistory}>
+        <Route path="/" component={Hello} />
+    </Router>),
+    document.getElementById("app")
 );

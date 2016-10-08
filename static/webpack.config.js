@@ -32,4 +32,15 @@ module.exports = {
         "react": "React",
         "react-dom": "ReactDOM"
     },
+
+    devServer: {
+        "inline": true,
+        "proxy": {
+            '/api': {
+                target: 'http://localhost:4567',
+                pathRewrite: {'^/api': ''},   /* Remove the /api part when talking to the API server */
+                secure: false
+            }
+        }
+    }
 };
