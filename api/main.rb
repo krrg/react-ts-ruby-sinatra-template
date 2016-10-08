@@ -1,8 +1,8 @@
-require 'sinatra'
+require 'sinatra/base'
+# set :bind, '0.0.0.0'   # This is required to get webpack-dev-server to work
 
-set :bind, '0.0.0.0'   # This is required to get webpack-dev-server to work
-
-get '/' do
-
-  "Hello world from the API"
+class MainApp < Sinatra::Base
+  get '/health' do
+    "good"
+  end
 end
