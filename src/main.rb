@@ -1,4 +1,3 @@
-require 'rubygems'
 require 'sinatra/base'
 
 class OpenSmimeApp < Sinatra::Base
